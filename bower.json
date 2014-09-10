@@ -1,0 +1,13 @@
+{
+  "name": "tomchambers",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "isotope": "~2.0.1"
+  }
+}

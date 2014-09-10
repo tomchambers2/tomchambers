@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	div.main
+		include header
+	div.portfolio
+		h2 Portfolio
+		h3 Filter by: 
+			button(data-filter="*" class="filter-select selected") Show all
+			button(data-filter=".commission" class="filter-select") Commissions
+			button(data-filter=".app" class="filter-select") Apps
+			button(data-filter=".experiment" class="filter-select") Experiments
+		div.portfolio-container
+			each site in sites
+				div.box(class="#{site.type}")
+					div.box-content
+						img(src="imga/#{site.image}")
+						div.extended-desc
+							h3 #{site.name}
+							|Moviehunter is an app that gets local film times for locations in the UK. It's written in Angular. Moviehunter is an app that gets local film times for locations in the UK. It's written in Angular. Moviehunter is an app that gets local film times for locations in the UK. It's written in Angular. Moviehunter is an app that gets local film times for locations in the UK.
+						div.title
+							|#{site.name}
+
+	div.base
+		div.triangle.one
+		div.triangle.five
+		div.triangle.two
+		div.triangle.three
+		div.triangle.four
