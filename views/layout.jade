@@ -8,13 +8,19 @@ html(lang='en')
       link(rel='stylesheet', href='/css/style.css')
       link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic')
       link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Josefin+Sans:100italic,100,300italic,300,400italic,400,600italic,600,700italic,700')
+      link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Montserrat')
     block js
       script(src='components/jquery/dist/jquery.min.js')
       script(src='components/isotope/dist/isotope.pkgd.min.js')
       script(src='components/FitText.js/jquery.fittext.js')
       script(src='js/main.js')
       script(src='http://localhost:35729/livereload.js')
+      if page == 'portfolio'
+        script(src='js/drip-pool.pjs' type='text/paperscript' canvas='drip-pool')
   if page == 'portfolio'
     body(class="portfolio")
   body
+    if page == 'index'
+      video(loop class="background-video")
+        source(src="/img/bg.mov")
     block content

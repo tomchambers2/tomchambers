@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Tom Chambers' });
+  res.render('index', { title: 'Tom Chambers', page: 'index' });
 });
 
 router.get('/portfolio', function(req, res) {
@@ -15,6 +15,10 @@ router.get('/portfolio', function(req, res) {
 });
 
 router.get('/contact', function(req, res) {
+  res.render('contact', { title: 'Tom Chambers' });
+});
+
+router.get('/admin', function(req, res) {
   res.render('contact', { title: 'Tom Chambers' });
 });
 

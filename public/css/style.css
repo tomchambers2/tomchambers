@@ -1,14 +1,22 @@
 body {
-	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-	background: url(../img/tomchambers.JPG) right no-repeat, #E6C7B0;
-	font-family: Josefin Sans;
-	font-size: 1.4em;
+	//font: 8px "Montserrat", Helvetica, Arial, sans-serif;
+	//background: url(../img/tomchambers.JPG) right no-repeat, #E6C7B0;
+	font-family: "Montserrat";
+	font-size: 1.2em;
 	color: #fff;
 	margin: 0;
+	background: #E9DACE;
 }
 
 body.portfolio {
 	background: url(../img/congruent_pentagon.png);
+}
+
+.background-video {
+	position: absolute;
+	min-height: 100%;
+	min-width: 100%;
+	z-index: -1000;
 }
 
 .main {
@@ -23,6 +31,8 @@ h1 {
 	font-size: 3.5em;
 	margin: 0;
 	padding: 0;
+	margin-top: 30%;
+	margin-bottom: 10%;
 	font-family: 'Sorts Mill Goudy', serif;
 	font-style: italic;
 	font-weight: 100;
@@ -38,15 +48,20 @@ p {
 }
 
 nav ul {
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #fff;
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #fff;
 	padding: 8px 0px;
+	margin: 0;
 	text-align: center;
+	text-weight: 500;
 }
 nav li {
 	display: inline;
 	list-style: none;
-	padding: 0 20px;
+	padding: 0 20px 0 0;
+}
+nav li:last-of-type {
+	padding-right: 0px;
 }
 nav li:hover, nav li:focus {
 	//needs something here
@@ -62,6 +77,7 @@ nav a {
 
 .text {
 	padding: 2%;
+	display: none;
 }
 li {
 	padding: 4px 0px;

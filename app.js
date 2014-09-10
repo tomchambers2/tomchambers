@@ -35,6 +35,9 @@ app.use(function(req,res,next) {
     next();
 });
 
+app.get('/login', passport.authenticate('google'))
+app.get('/admin', passport.authenticate('google'))
+
 app.use('/', routes);
 app.use('/users', users);
 
