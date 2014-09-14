@@ -3,17 +3,25 @@ extends layout
 block content
 	div.main
 		include header
-		div.text
-			h2 Contact & feedback
-			p
-				|The fastest way to reach me is likely by email: 
-				a(href="mailto:tom.chambers@gmail.com") tom.chambers@gmail.com
-			p.
-				but you can also call me on 07590 574540
-			p.
-				I am on twitter @tomchambers
-			p.
-				Try github if you have any issues
-			p.
-				If you've recently interacted with me and would like to provide anonymous feedback, you can do so using this form.
-	canvas(id="falling-mail")
+	div.text
+		h2 Contact & feedback
+		h3
+			|The fastest way to reach me is 
+			a(href="mailto:tom.chambers@gmail.com") by email
+		h3
+			|You can call me on 07590 574540
+		h3
+			|I am on twitter @
+			a(href='https://twitter.com/tom_d_chambers') tom_d_chambers
+		p
+			|My github profile is 
+			a(href='https://github.com/tomchambers2') tomchambers2
+			|. Someone other guy got 'tomchambers' a few months earlier and he hasn't even committed anything. The profile picture is my coding face.
+		p
+			|I'm very interested in learning about myself and collecting data that helps me to do so. If you want to make a review of sorts of a time when we recently interacted, you can do so using 
+			a(href='https://tomchambers.wufoo.com/forms/tom-chambers-feedback/') this form
+			|.
+		p.
+			If people actually fill it in, I'll be able to analyse the data along with other recorded variables to see what influences people's perceptions of me, how these factors change the way I act and if there's a gradual shift over time. It's nominally anonymous, but we all know the risks of pseudonymous data, so proceed at your own risk.
+	canvas(id="envelopes" resize keepalive="true")
+	img(src='img/gmail.png' id='gmail-icon')

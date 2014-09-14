@@ -2,25 +2,27 @@ doctype html
 html(lang='en')
   head
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width')
+    meta(name='viewport', content='width=device-width, user-scalable=no')
     title= title
     block css
       link(rel='stylesheet', href='/css/style.css')
       link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic')
       link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Josefin+Sans:100italic,100,300italic,300,400italic,400,600italic,600,700italic,700')
       link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Montserrat')
+      link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
     block js
       script(src='components/jquery/dist/jquery.min.js')
       script(src='components/isotope/dist/isotope.pkgd.min.js')
       script(src='components/FitText.js/jquery.fittext.js')
-      script(src='js/main.js')
+      script(src='//cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js')      
       script(src='http://localhost:35729/livereload.js')
+      script(src='js/main.js')
       if page == 'portfolio'
-        script(src='js/drip-pool.pjs' type='text/paperscript' canvas='drip-pool')
+        script(src='js/colors.js')      
+        //script(src='js/drip-pool.js' type='text/paperscript' canvas='drip-pool')
+      if page == 'contact'
+        script(src='js/envelopes.js' type='text/paperscript' canvas='envelopes')
   if page == 'portfolio'
     body(class="portfolio")
   body
-    if page == 'index'
-      video(loop class="background-video")
-        source(src="/img/bg.mov")
     block content

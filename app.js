@@ -7,7 +7,15 @@ var bodyParser = require('body-parser');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/tomchambers');
+var db = monk('tomchambers:horse@ds035290.mongolab.com:35290/tomchambers');
+console.log(db);
+//var mongoose = require('mongoose');
+/*
+mongoose.connection.on("open", function() {
+    console.log('connected to db');
+})
+var db = mongoose.connect("mongodb://ds012345.mongolab.com:56789/tomchambers");
+*/
 
 var passport = require('passport');
 var GoogleStrategy = require('passport-google');

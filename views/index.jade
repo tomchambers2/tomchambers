@@ -1,20 +1,27 @@
 extends layout
 
 block content
-	div.main
-		include header
-		div.text
-			h2 Freelance front-end web developer
-			p.
-				I am a front-end web developer living in London. I can build complex web apps using javascript MVC frameworks like backbone, angular and ember. I can also build you a standard website with a CMS.
-			h2 I work with
-			p
-				each item in ['Javascript','HTML5/CSS3','Angular, Ember, Backbone, Knockout','node.js','Ruby on Rails','Web audio API','Canvas - paper.js, raphael, snap.svg','Websockets & WebRTC']
-					li= item
-			p
-				|See 
-				a(href="/portfolio") my portfolio
-				= ' '
-				|for examples of previous work.
-			p.
-				I generally work with clients in London, but I am happy to travel for consultations in the rest of the UK for big enough jobs, and work remotely for overseas clients. For the right company, I may be convinced to go full time.
+	video(loop autoplay muted class='background-video' poster='')
+		source(src="/img/bg.mov")
+	div.page-one
+		div.main
+			include header
+			div.slogan Front end developer &amp; designer
+			a(href="#more" class="more desktop-only")
+				div.more <i class="fa fa-chevron-circle-down"></i><br>Read more<br>
+	div.page-two(id="more")
+		h2 All about Tom Chambers
+		p.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi architecto, dolore perspiciatis expedita neque quae, labore aut, fuga harum aliquid libero explicabo reprehenderit voluptatibus delectus? Facere tempore ut enim.		
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi architecto, dolore perspiciatis expedita neque quae, labore aut, fuga harum aliquid libero explicabo reprehenderit voluptatibus delectus? Facere tempore ut enim.		
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi architecto, dolore perspiciatis expedita neque quae, labore aut, fuga harum aliquid libero explicabo reprehenderit voluptatibus delectus? Facere tempore ut enim.			
+		p.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi architecto, dolore perspiciatis expedita neque quae, labore aut, fuga harum aliquid libero explicabo reprehenderit voluptatibus delectus? Facere tempore ut enim.		
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi architecto, dolore perspiciatis expedita neque quae, labore aut, fuga harum aliquid libero explicabo reprehenderit voluptatibus delectus? Facere tempore ut enim.		
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi architecto, dolore perspiciatis expedita neque quae, labore aut, fuga harum aliquid libero explicabo reprehenderit voluptatibus delectus? Facere tempore ut enim.		
+		p.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi architecto, dolore perspiciatis expedita neque quae, labore aut, fuga harum aliquid libero explicabo reprehenderit voluptatibus delectus? Facere tempore ut enim.		
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi architecto, dolore perspiciatis expedita neque quae, labore aut, fuga harum aliquid libero explicabo reprehenderit voluptatibus delectus? Facere tempore ut enim.		
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi architecto, dolore perspiciatis expedita neque quae, labore aut, fuga harum aliquid libero explicabo reprehenderit voluptatibus delectus? Facere tempore ut enim.
+		footer
+			|<a href="/portfolio">Portfolio</a> | <a href="http://justtomchambers.tumblr.com">Art blog</a> | <a href="/contact">Contact &amp; feedback</a>						
