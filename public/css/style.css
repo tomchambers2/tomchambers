@@ -57,7 +57,9 @@ a.more {
 	padding: 0;
 	width: 50%;
 	text-align: justify;
-	margin: 0 auto;
+	//margin: 0 auto;
+	margin-left: 5%;
+	width: 40%;
 	padding: 5% 0;
 }
 .page-two footer {
