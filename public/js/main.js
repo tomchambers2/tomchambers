@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  $('.background-video').bind('play', function(e) {
+    console.log('video start');
+    $('.loading-video').css('display', 'none')
+  });
+
 	$('.headline').fitText(0.75);
 
 	$('.headline').css('lineHeight',$('.headline').css('fontSize'));
