@@ -25,14 +25,16 @@ block content
 						img(src="img/#{site.image}")
 						div.extended-desc
 							h3 #{site.name}
-							p
-								|#{site.extended_desc}
+							p!= site.extended_desc
 						div.buttons
 							if site.github
-								a(href="#{site.github}")
+								a(href="#{site.github}" target="_blank")
 									button(class='github') <i class="fa fa-github"></i> Github repo
-							a(href="#{site.link}")
-								button(class='site-link') <i class="fa fa-link"></i> Website
+								a(href="#{site.link}" target="_blank")
+									button(class='site-link second') <i class="fa fa-link"></i> Website
+							else
+								a(href="#{site.link}" target="_blank")
+									button(class='site-link solo') <i class="fa fa-link"></i> Website
 						div.title
 							|#{site.name}
 
