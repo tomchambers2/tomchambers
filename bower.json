@@ -8,6 +8,7 @@
   ],
   "dependencies": {
     "jquery": "~2.1.1",
-    "isotope": "~2.0.1"
+    "isotope": "~2.0.1",
+    "FitText.js": "*"
   }
 }
