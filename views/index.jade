@@ -3,8 +3,10 @@ extends layout
 block content
 	div.loading-video
 
-	video(loop autoplay muted class='background-video' poster='')
-		source(src="/img/bg.mov")
+	div.video-container
+		video(loop autoplay muted class='background-video' poster='/bgvideos/poster.jpg')
+			source(src='/bgvideos/bgvideo.ogv' type='video/ogg')
+			source(src='/bgvideos/bgvideo.mp4' type='video/mp4')
 	div.page-one
 		div.main
 			include header
@@ -37,7 +39,7 @@ block content
 			My education informs everything I do, allowing me to take a step back and deconstruct what's in front of me to find something new. While there, I served as photo editor then comment editor of the <a href="http://london-student.net/">London Student</a> newspaper which had a readership of 30,000.
 		h3 The past
 		p.
-			I got into web development as a teenager. The abominable <a href="http://wierdo.8k.com/">first website</a> I made when 12 years old is unaccountably still online. In 2006 I built <a href="https://web.archive.org/web/20070201211623/http://theaudiobubble.com/">audiobubble</a>, one of the world's first DRM-free music stores. I feel fortunate to have grown up in an age where the tools to create wonderful things online are freely available.
+			I got into web development as a teenager. The abominable <a href="http://wierdo.8k.com/">first website</a> I made when 12 years old is unaccountably still online. In 2006 I built <a href="https://web.archive.org/web/20070201211623/http://theaudiobubble.com/">audiobubble</a>, one of the world's first DRM-free music stores. I feel fortunate to have grown up in an age where the tools to create wonderful things online are freely available and enjoy giving back in the same way.
 		h3 And finally
 		p.
 			As well as web development I like to write fiction and essays, some of which is available on <a href="http://justtomchambers.tumblr.com">my blog</a>, but most is lurking as nearly-ready drafts on my hard drive. I'm interested in our changing social institutions, the development of cities, urbanism and public space. I'm a great cook too.

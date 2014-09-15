@@ -30,9 +30,11 @@ a {
 	text-align: center;
 	margin-top: 25%;
 	font-size: 1.5em;
-	color: #5A5A5A;
+	//color: #5A5A5A;
+	color: #fff;
 }
-@media only screen and (max-height: 700px) {
+
+@media only screen and (max-height: 700px), only screen and (max-width: 1300px) {
 	.slogan {
 		margin-top: 15%;
 		font-size: 2em;
@@ -46,7 +48,7 @@ a.more {
 	text-decoration: none;
 }
 .more:hover {
-	color: #000;
+	color: #D3D3D3;
 }
 .more i {
 	margin-bottom: 2%;
@@ -82,21 +84,18 @@ body.portfolio {
 	right: 0;
 	bottom: 0;
 	z-index: -900;
-	background: #E9DACE;
+	background: #2E4827;
 }
 .background-video {
-	position: absolute;
-	min-height: 100%;
-	min-width: 100%;
-	right: 0;
-	bottom: 0;
-	z-index: -1000;
-	background: #E9DACE !important;
+	width: 100%;
+	height: auto;
 }
-@media only screen and (max-width: 1400px) and (min-height: 800px) {
-	.background-video {
-		right: -250px;
-	}
+.video-container {
+	position: absolute;
+	overflow: hidden;	
+	height: 100%;
+	z-index: -1000;
+	background: #2E4827;	
 }
 
 .main {
@@ -371,6 +370,19 @@ button.filter-select:focus {
 	display: none;
 }
 
+
+@media only screen and (min-width: 991px) {
+	.page-one {
+		color: #fff;
+	}
+	.page-one nav ul {
+		color: #fff;
+		border-color: #fff;
+	}
+	.page-one nav a {
+		color: #fff;
+	}
+}
 @media only screen and (max-width: 991px) {
 	.mobile-only {
 		display: inline-block;
