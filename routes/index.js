@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 router.get('/portfolio', function(req, res) {
   var db = req.db;
   var collection = db.get('portfolioSites');
-  collection.find({},{},function(e,docs){
+  collection.find({},{ sort: { order: 1 }},function(e,docs){
   	console.log(docs);
   	res.render('portfolio', { title: 'Tom Chambers', page: 'portfolio', sites: docs });
   })
