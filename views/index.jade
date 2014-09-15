@@ -1,12 +1,11 @@
 extends layout
 
 block content
-	div.loading-video
-
 	div.video-container
+		div.loading-video
 		video(loop autoplay muted class='background-video' poster='/bgvideos/poster.jpg')
-			source(src='/bgvideos/bgvideo.ogv' type='video/ogg')
 			source(src='/bgvideos/bgvideo.mp4' type='video/mp4')
+			source(src='/bgvideos/bgvideo2.ogv' type='video/ogg')
 	div.page-one
 		div.main
 			include header
