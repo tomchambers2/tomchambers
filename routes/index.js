@@ -11,7 +11,16 @@ router.get('/portfolio', function(req, res) {
   var collection = db.get('portfolioSites');
   collection.find({},{ sort: { order: 1 }},function(e,docs){
   	console.log(docs);
-  	res.render('portfolio', { title: 'Tom Chambers', page: 'portfolio', sites: docs });
+  	res.render('portfolio', { title: 'Tom Chambers web portfolio', page: 'portfolio', sites: docs });
+  })
+});
+
+router.get('/projects', function(req, res) {
+  var db = req.db;
+  var collection = db.get('projectSites');
+  collection.find({},{ sort: { order: 1 }},function(e,docs){
+  	console.log(docs);
+  	res.render('projects', { title: 'Tom Chambers\'s projects', page: 'projects', sites: docs });
   })
 });
 

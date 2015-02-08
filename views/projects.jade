@@ -1,0 +1,45 @@
+extends layout
+
+block content
+	div.main
+		include header
+	div.portfolio
+		h2 Projects
+		h3.mobile-only
+			|Filter by
+		div.portfolio-filters
+			button(data-filter="*" class="filter-select selected") Everything
+			button(data-filter=".audio" class="filter-select") Audio
+		h3.mobile-only
+			|Tap to expand boxes
+		div.portfolio-container
+			each site in sites
+				div.box(class="#{site.type} #{site.name}")
+					div.box-content
+						div.close-button
+							i(class='fa fa-times-circle')
+						div.helper-text
+							i(class='fa fa-expand')
+						img(src="img/#{site.image}")
+						div.extended-desc
+							h3 #{site.name}
+							p!= site.extended_desc
+						div.buttons
+							if site.github
+								a(href="#{site.github}" target="_blank")
+									button(class='github') <i class="fa fa-github"></i> Github repo
+								a(href="#{site.link}" target="_blank")
+									button(class='site-link second') <i class="fa fa-link"></i> Website
+							else
+								a(href="#{site.link}" target="_blank")
+									button(class='site-link solo') <i class="fa fa-link"></i> Website
+						div.title
+							|#{site.name}
+
+	<!-- canvas(id="drip-pool" resize) -->
+	//div.base
+		div.triangle.one
+		div.triangle.five
+		div.triangle.two
+		div.triangle.three
+		div.triangle.four

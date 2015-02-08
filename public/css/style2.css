@@ -1,0 +1,596 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	font: 8px "Montserrat", Helvetica, Arial, sans-serif;
+	font-size: 1.2em;
+	color: #fff;
+	color: #000;
+	margin: 0;
+	background: #E9DACE;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+    background-image: linear-gradient(transparent 1.04em,#000 7px,#000 1.10em,transparent 1em);	
+	position: relative;
+}
+.page-one {
+	max-height: 100%;
+}
+.slogan {
+	text-align: center;
+	margin-top: 25%;
+	font-size: 2.5em;
+}
+.more {
+	text-align: center;
+	margin-top: -17.5%;
+	font-size: 1.5em;
+	color: #fff;
+}
+
+@media only screen and (max-height: 700px), only screen and (max-width: 1300px) {
+	.slogan {
+		margin-top: 15%;
+		font-size: 2em;
+	}
+	.more {
+		font-size: 1.2em;
+		margin-top: -17.5%;
+	}
+}
+a.more {
+	text-decoration: none;
+}
+.more:hover {
+	color: #D3D3D3;
+}
+.more i {
+	margin-bottom: 2%;
+	font-size: 1.3em;
+}
+.page-two {
+	margin-top: 10%;
+	min-height: 100%;
+	padding: 0;
+	width: 50%;
+	text-align: justify;
+	margin-left: 5%;
+	width: 40%;
+	padding: 5% 0;
+	float: left;
+}
+.page-two footer {
+	margin-top: 10%;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.quotes {
+	float: right;
+	width: 30%;
+	margin: 10%;
+}
+.quote {
+	
+}
+.quote.matt {
+	margin-top: 20%;
+}
+.quote.melissa {
+	margin-top: 80%;
+}
+.quote .body {
+	background: #000;
+	color: #fff;
+	padding: 1em;
+	text-align: left;
+	word-wrap: break-word;
+	position: relative;
+}
+.quote .body:after {
+	content: '';
+	border-top: 40px solid #000;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	position: absolute;
+	bottom: -25px;
+	right: 30px;
+}
+.quote .title {
+	min-height: 100px;
+	padding: 20px;
+}
+.quote .person {
+	float: right;
+	height: 100px;
+	width: 100px;
+	border-radius: 100px;
+	background-position: center;
+	background-size: contain;
+}
+.person.melissa {
+	background-image: url(/img/quotes/melissa-morris.jpg)
+}
+.person.matt {
+	background-image: url(/img/quotes/matt-clifford.jpeg)
+}
+
+
+body.portfolio {
+	background: url(../img/congruent_pentagon.png);
+	color: #fff;
+	overflow: initial;
+}
+
+.loading-video {
+	width: 100%;
+	height: auto;
+	background: url(../bgvideos/poster.jpg);
+	background-size: 100% auto;
+}
+.background-video {
+	width: 100%;
+	height: auto;
+}
+.video-container {
+	position: absolute;
+	overflow: hidden;	
+	z-index: -1000;
+	background: #2E4827;
+	max-height: 100%;	
+}
+
+.main {
+	width: 40%;
+	padding: 0% 5%;
+	padding-bottom: 0;
+}
+
+h1 {
+	display: inline-block;
+	width: 100%;
+	font-size: 3.5em;
+	margin: 20% 0 0 0;
+	padding: 0;
+	font-family: 'Sorts Mill Goudy', serif;
+	font-style: italic;
+	font-weight: 100;
+	line-height: 80px;
+}
+h2 {
+	font-size: 1.7em;
+	margin: 1.3em 0 0 0;
+	padding: 0;
+}
+h3 {
+	margin: 8% 0 0 0;
+	padding: 0;
+}
+
+p {
+	margin: 4% 0 4% 0;
+	padding: 0;
+}
+
+nav ul {
+	border-top: 3px solid #000;
+	border-bottom: 3px solid #000;
+	padding: 8px 0px;
+	margin: 0;
+	text-align: center;
+	text-weight: 500;
+
+	display: table;
+	width: 100%;
+}
+body.portfolio nav ul {
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+}
+body.portfolio a {
+	color: #fff;
+}
+nav li {
+	list-style: none;
+	font-size: 30px;
+	padding: 5px 15px 5px 0px;
+	//display: inline;
+	border-bottom: 1px solid #fff;
+}
+nav li:hover {
+	background: rgba(255, 255, 255, 0.3);
+}
+nav li:last-of-type {
+	border: none;
+}
+nav ul:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+nav a {
+	text-decoration: none;
+	background: none;
+}
+
+.text {
+	margin: 0 5% 0 5%;
+	margin-bottom: 20%;
+}
+@media only screen and (min-width: 991px) {
+	.text {
+		width: 40%;
+		overflow-y: scroll;
+		margin-bottom: 0;
+		text-align: justify;
+	}
+}
+
+/* portfolio page */
+div.portfolio {
+	padding: 0 0 0 5%;
+}
+.portfolio-filters {
+	margin: 2% 0 0 0;
+}
+.portfolio-container {
+	margin-top: 50px;
+}
+div.portfolio .box {
+	width: 355px;
+	height: 200px;
+	//float: left; //should be added in somehow, perhaps removed for browsers without js. but then how would they open the box?
+	//margin: 30px;
+	margin-bottom: 50px;
+}
+.box-content .helper-text {
+	position: absolute;
+	color: #000;
+	z-index: 1000;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	height: 2em;
+	width: 2em;
+	background: #fff;
+	border-radius: 500px;
+	text-align: center;
+	line-height: 2em;
+	font-size: 2em;
+	cursor: pointer;
+	opacity: 0;
+	transition: 0.3s linear;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.box-content:hover:not(.selected) .helper-text {
+	opacity: 1;
+}
+.box-content:hover:not(.selected) .helper-text:hover {
+	background-color: #DDDDDD;
+}
+.box-content .close-button {
+	display: none;
+	cursor: pointer;
+	position: absolute;
+	top: 1px;
+	right: 5px;
+	font-size: 1.5em;	
+	transition: 0.3s linear;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);	
+}
+@media only screen and (max-width: 991px) {
+	.box-content .close-button {
+		font-size: 2.5em;
+		top: 0px;
+		right: 8px;
+	}
+}
+.box-content .close-button:hover {
+	color: #535353;
+}
+.box-content.selected .close-button {
+	display: inline;
+}
+
+div.portfolio .box-content {
+	width: 355px;
+	height: 200px;
+	position: relative;
+	background: #fff;
+	color: #000;
+}
+div.portfolio .box-content.selected, div.portfolio .box.selected {
+	width: 760px;
+	height: 450px;
+}
+div.portfolio .box-content {
+	transition-duration: 0.4s;
+}
+.box-content .title {
+	bottom: 0;
+	position: absolute;
+	background: rgba(0,0,0,0.4);
+	width: calc(100% - 17px);
+	padding: 8.5px;
+	color: #fff;	
+
+	transition-duration: 0.4s;
+	opacity: 1;
+}
+.box-content.selected .title {
+	opacity: 0;
+}
+.box-content img {
+	width: 355px;
+	height: 200px;
+	transition-duration: 0.4s;
+}
+.box-content.selected img {
+	float: left;
+	margin: 25px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.box-content .extended-desc {
+	display: none;
+	padding: 25px;
+	text-align: justify;
+}
+.box-content .extended-desc h3 {
+	margin: 0;
+}
+.box-content.selected .extended-desc {
+	display: block;
+}
+
+.box:not(selected) .buttons {
+	display: none;
+}
+.box.selected .buttons {
+	display: block;
+	position: absolute;
+	width: calc(100% - 40px);
+	bottom: 0;
+	padding: 20px;
+	background: #D6D6D6;
+	margin-bottom: 0;
+}
+.box .buttons button {
+	height: 50px;
+	width: 49%;
+	margin-right: 2%;
+	font-size: 1.6em;
+	font-family: "Montserrat";
+	background: #fff;
+	border: 2px solid #000;
+}
+.box .buttons button:hover {
+	background: #aaa;
+	cursor: pointer;
+}
+.box button.github:before {
+	content: ;
+}
+.box .buttons button.second {
+	margin-right: 0;
+}
+.box .buttons button.solo {
+	width: 100%;
+}
+.buttons a {
+	background: none;
+}
+
+button.filter-select {
+	font-family: Josefin Sans;
+	font-size: 1.5em;
+	background: none;
+	border: none;
+	border: 2px solid transparent;
+	color: #fff;
+	padding: 7px;
+	margin-right: 2em;
+	cursor: pointer;
+
+	transition: 0.4s;
+}
+button.filter-select.selected {
+	background: none;
+	border-bottom: 2px solid white;
+}
+button.filter-select:hover {
+	outline: none;
+	background: rgba(255,255,255,0.6);
+}
+button.filter-select:focus {
+	outline: none;
+	background: rgba(255,255,255,0.6);
+}
+
+.mobile-only {
+	display: none;
+}
+
+
+@media only screen and (min-width: 991px) {
+	.page-one {
+		color: #fff;
+	}
+	.page-one nav ul {
+		color: #fff;
+		border-color: #fff;
+	}
+	.page-one nav a {
+		color: #fff;
+	}
+}
+@media only screen and (max-width: 991px) {
+	.page-two {
+		float: none;
+	}
+	.quotes {
+		display: none;
+	}
+	.mobile-only {
+		display: inline-block;
+	}
+
+	.background-video {
+		display: none;
+	}
+	.main {
+		width: 90%;
+	}
+	h2 {
+		margin-top: 20%;
+	}
+	h3 {
+		margin: 5% 0 5% 0;
+	}
+	p {
+		margin: 5% 0 5% 0;
+	}
+	#envelopes {
+		display: none;
+	}
+	.text {
+		white-space: break-word;
+	}
+}
+@media only screen and (max-width: 420px) {
+	/* portfolio page */
+	div.portfolio .box {
+		width: 95%;
+	}
+	div.portfolio .box-content {
+		width: 100%;
+		position: relative;
+		background: #fff;
+		color: #000;
+	}	
+	div.portfolio .box.selected {
+		width: 95%;
+	}
+	div.portfolio .box-content.selected {
+		width: 100%;
+		height: 650px;
+	}
+	.box-content img {
+		width: 100%;
+		transition: 0.4s;
+	}	
+	.box-content.selected img {
+		margin: 0;
+		float: none;		
+	}
+	.box-content.selected .title {
+		opacity: 1;
+	}	
+	.box-content h3 {
+		display: none;
+	}		
+}
+@media only screen and (max-width: 991px) {
+	nav li {
+		display: block;
+		border-bottom: 1px solid black;
+		padding: 10px 0 10px 0;
+	}
+	nav li:last-of-type {
+		border: none;
+	}
+	body.portfolio nav li {
+		border-color: #fff;
+	}
+}
+@media only screen and (max-width: 991px) {
+	.desktop-only {
+		display: none;
+	}
+	.page-one {
+		height: initial;
+	}
+	.page-two {
+		padding: 0;
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 10%;
+	}
+	h2 {
+		margin-top: 15%;
+	}
+	.slogan {
+		margin-top: 15%;
+	}
+}
+
+
+
+
+
+/* contact page animation */
+#envelopes {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: -1000;
+}
+#gmail-icon {
+	display: none;
+}
+
+/* animation stuff */
+#drip-pool {
+	width: 100%;
+}
+
+.base {
+	padding-top: 15%;
+	height: 10%;
+	position: relative;
+	bottom: 0;
+	clear: both;
+}
+.triangle {
+	position: absolute;
+	width: 0px;
+	bottom: 0;
+}
+.triangle.one {
+	border-bottom: 100px solid #18063A;
+	border-right: 500px solid transparent;
+	border-left: 0px solid transparent;
+	bottom: 0;
+}
+.triangle.five {
+	left: 10%;
+	border-bottom: 70px solid #553D00;
+	border-right: 350px solid transparent;
+	border-left: 300px solid transparent;
+	bottom: 0;
+}
+.triangle.two {
+	left: 50%;
+	border-bottom: 80px solid #554A00;
+	border-left: 200px solid transparent;
+	border-right: 400px solid transparent;
+}
+.triangle.three {
+	left: 30%;
+	border-bottom: 80px solid #003D1B;
+	border-left: 300px solid transparent;
+	border-right: 100px solid transparent;
+}
+.triangle.four {
+	right: 0;
+	border-bottom: 120px solid #802B15;
+	border-left: 300px solid transparent;
+}
