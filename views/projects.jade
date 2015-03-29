@@ -25,9 +25,9 @@ block content
 							h3 #{site.name}
 							p!= site.extended_desc
 						div.buttons
-							if site.github
-								a(href="#{site.github}" target="_blank")
-									button(class='github') <i class="fa fa-github"></i> Github repo
+							if site.documentation
+								a(href="#{site.documentation}" target="_blank")
+									button(class='documentation') <i class="fa fa-file-text-o"></i> Documentation
 								a(href="#{site.link}" target="_blank")
 									button(class='site-link second') <i class="fa fa-link"></i> Website
 							else
