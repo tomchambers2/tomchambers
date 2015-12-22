@@ -18,13 +18,9 @@ block content
 			each site in sites
 				div.box(class="#{site.type} #{site.name}")
 					div.box-content
-						div.close-button
-							i(class='fa fa-times-circle')
-						div.helper-text
-							i(class='fa fa-expand')
 						img(src="img/#{site.image}")
 						div.extended-desc
-							h3 #{site.name}
+							|<b>#{site.name}</b>
 							p!= site.extended_desc
 						div.buttons
 							if site.github
@@ -35,13 +31,3 @@ block content
 							else
 								a(href="#{site.link}" target="_blank")
 									button(class='site-link solo') <i class="fa fa-link"></i> Website
-						div.title
-							|#{site.name}
-
-	<!-- canvas(id="drip-pool" resize) -->
-	//div.base
-		div.triangle.one
-		div.triangle.five
-		div.triangle.two
-		div.triangle.three
-		div.triangle.four

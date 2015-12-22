@@ -233,8 +233,8 @@ div.portfolio {
 	margin-top: 50px;
 }
 div.portfolio .box {
-	width: 355px;
-	height: 200px;
+	//width: 355px;
+	//height: 200px;
 	//float: left; //should be added in somehow, perhaps removed for browsers without js. but then how would they open the box?
 	//margin: 30px;
 	margin-bottom: 50px;
@@ -291,8 +291,8 @@ div.portfolio .box {
 }
 
 div.portfolio .box-content {
-	width: 355px;
-	height: 200px;
+	//width: 355px;
+	//height: 200px;
 	position: relative;
 	background: #fff;
 	color: #000;
@@ -319,8 +319,8 @@ div.portfolio .box-content {
 	opacity: 0;
 }
 .box-content img {
-	width: 355px;
-	height: 200px;
+	//width: 355px;
+	//height: 200px;
 	transition-duration: 0.4s;
 }
 .box-content.selected img {
@@ -330,7 +330,7 @@ div.portfolio .box-content {
 	margin-bottom: 20px;
 }
 .box-content .extended-desc {
-	display: none;
+	//display: none;
 	padding: 25px;
 	text-align: justify;
 }
@@ -342,7 +342,7 @@ div.portfolio .box-content {
 }
 
 .box:not(selected) .buttons {
-	display: none;
+	//display: none;
 }
 .box.selected .buttons {
 	display: block;
@@ -355,9 +355,10 @@ div.portfolio .box-content {
 }
 .box .buttons button {
 	height: 50px;
-	width: 49%;
+	width: 43%;
+	margin: 4%;
 	margin-right: 2%;
-	font-size: 1.6em;
+	font-size: 0.8em;
 	font-family: "Montserrat";
 	background: #fff;
 	border: 2px solid #000;
@@ -373,7 +374,7 @@ div.portfolio .box-content {
 	margin-right: 0;
 }
 .box .buttons button.solo {
-	width: 100%;
+	width: 92%;
 }
 .buttons a {
 	background: none;

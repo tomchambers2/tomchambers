@@ -16,30 +16,16 @@ block content
 			each site in sites
 				div.box(class="#{site.type} #{site.name}")
 					div.box-content
-						div.close-button
-							i(class='fa fa-times-circle')
-						div.helper-text
-							i(class='fa fa-expand')
 						img(src="img/#{site.image}")
 						div.extended-desc
-							h3 #{site.name}
+							|<b>#{site.name}</b>
 							p!= site.extended_desc
 						div.buttons
-							if site.documentation
-								a(href="#{site.documentation}" target="_blank")
-									button(class='documentation') <i class="fa fa-file-text-o"></i> Documentation
+							if site.github
+								a(href="#{site.github}" target="_blank")
+									button(class='github') <i class="fa fa-github"></i> Github repo
 								a(href="#{site.link}" target="_blank")
 									button(class='site-link second') <i class="fa fa-link"></i> Website
 							else
 								a(href="#{site.link}" target="_blank")
 									button(class='site-link solo') <i class="fa fa-link"></i> Website
-						div.title
-							|#{site.name}
-
-	<!-- canvas(id="drip-pool" resize) -->
-	//div.base
-		div.triangle.one
-		div.triangle.five
-		div.triangle.two
-		div.triangle.three
-		div.triangle.four
