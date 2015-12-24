@@ -3,3 +3,4 @@ public/components
 .sass-cache
 .DS_store
 tomchambers-personal-**
+npm-debug.log
