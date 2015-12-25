@@ -7,12 +7,12 @@ $(window).on('load', function() {
 		$(this).width(width);
 	})
 
-		var $container = $('.portfolio-container');
+	var $container = $('.portfolio-container');
 	$container.isotope({
 		itemSelector: '.box',
-		masonry: {
-			columnWidth: 355,
-			gutter: 16
+		layoutMode: 'packery',
+		packery: {
+			gutter: 35
 		}
 	});
 });

@@ -233,126 +233,19 @@ div.portfolio {
 	margin-top: 50px;
 }
 div.portfolio .box {
-	//width: 355px;
-	//height: 200px;
-	//float: left; //should be added in somehow, perhaps removed for browsers without js. but then how would they open the box?
-	//margin: 30px;
 	margin-bottom: 50px;
 }
-.box-content .helper-text {
-	position: absolute;
-	color: #000;
-	z-index: 1000;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	margin: auto;
-	height: 2em;
-	width: 2em;
-	background: #fff;
-	border-radius: 500px;
-	text-align: center;
-	line-height: 2em;
-	font-size: 2em;
-	cursor: pointer;
-	opacity: 0;
-	transition: 0.3s linear;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-.box-content:hover:not(.selected) .helper-text {
-	opacity: 1;
-}
-.box-content:hover:not(.selected) .helper-text:hover {
-	background-color: #DDDDDD;
-}
-.box-content .close-button {
-	display: none;
-	cursor: pointer;
-	position: absolute;
-	top: 1px;
-	right: 5px;
-	font-size: 1.5em;	
-	transition: 0.3s linear;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);	
-}
-@media only screen and (max-width: 991px) {
-	.box-content .close-button {
-		font-size: 2.5em;
-		top: 0px;
-		right: 8px;
-	}
-}
-.box-content .close-button:hover {
-	color: #535353;
-}
-.box-content.selected .close-button {
-	display: inline;
-}
 
-div.portfolio .box-content {
-	//width: 355px;
-	//height: 200px;
-	position: relative;
+div.portfolio .box {
 	background: #fff;
 	color: #000;
 }
-div.portfolio .box-content.selected, div.portfolio .box.selected {
-	width: 760px;
-	height: 450px;
-}
-div.portfolio .box-content {
-	transition-duration: 0.4s;
-}
-.box-content .title {
-	bottom: 0;
-	position: absolute;
-	background: rgba(0,0,0,0.4);
-	width: calc(100% - 17px);
-	padding: 8.5px;
-	color: #fff;	
 
-	transition-duration: 0.4s;
-	opacity: 1;
-}
-.box-content.selected .title {
-	opacity: 0;
-}
-.box-content img {
-	//width: 355px;
-	//height: 200px;
-	transition-duration: 0.4s;
-}
-.box-content.selected img {
-	float: left;
-	margin: 25px;
-	margin-right: 20px;
-	margin-bottom: 20px;
-}
-.box-content .extended-desc {
-	//display: none;
+.box .extended-desc {
 	padding: 25px;
 	text-align: justify;
 }
-.box-content .extended-desc h3 {
-	margin: 0;
-}
-.box-content.selected .extended-desc {
-	display: block;
-}
 
-.box:not(selected) .buttons {
-	//display: none;
-}
-.box.selected .buttons {
-	display: block;
-	position: absolute;
-	width: calc(100% - 40px);
-	bottom: 0;
-	padding: 20px;
-	background: #D6D6D6;
-	margin-bottom: 0;
-}
 .box .buttons button {
 	height: 50px;
 	width: 43%;
