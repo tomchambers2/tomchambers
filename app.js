@@ -9,11 +9,7 @@ var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('tomchambers:whamberry@ds035290.mongolab.com:35290/tomchambers');
 
-var passport = require('passport');
-var GoogleStrategy = require('passport-google');
-
 var routes = require('./routes/index');
-var users = require('./routes/user');
 
 var app = express();
 
@@ -35,11 +31,7 @@ app.use(function(req,res,next) {
     next();
 });
 
-app.get('/login', passport.authenticate('google'))
-app.get('/admin', passport.authenticate('google'))
-
 app.use('/', routes);
-app.use('/users', users);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
