@@ -8,22 +8,18 @@ router.get('/', function(req, res) {
 
 router.get('/portfolio', function(req, res, next) {
   var db = req.db;
-  var collection = db.get('portfolioSites');
-  collection.find({},{ sort: { order: 1 }},function(e,docs){
-    console.log(e)
+  var collection = db.collection('portfolioSites');
+  collection.find({},{ sort: { order: 1 }}).toArray(function(e,docs){
     if (e) return next(e);
-  	console.log(docs);
   	res.render('portfolio', { title: 'Tom Chambers web portfolio', page: 'portfolio', sites: docs });
   })
 });
 
 router.get('/projects', function(req, res, next) {
   var db = req.db;
-  var collection = db.get('projectSites');
-  collection.find({},{ sort: { order: 1 }},function(e,docs){
-    console.log(e)
+  var collection = db.collection('projectSites');
+  collection.find({},{ sort: { order: 1 }}).toArray(function(e,docs){
     if (e) return next(e);
-  	console.log(docs);
   	res.render('projects', { title: 'Tom Chambers\'s projects', page: 'projects', sites: docs });
   })
 });

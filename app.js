@@ -5,52 +5,61 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('website:wfebsite@ds035290.mongolab.com:35290/tomchambers');
+function start(db, cb) {
+    var routes = require('./routes/index');
+    var app = express();
 
-var routes = require('./routes/index');
+    // view engine setup
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'jade');
 
-var app = express();
+    // app.use(favicon(__dirname + '/public/img/favicon.ico'));
+    app.use(logger('dev'));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({
+      extended: true
+    }));
+    app.use(cookieParser());
+    app.use(express.static(path.join(__dirname, 'public')));
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-// app.use(favicon(__dirname + '/public/img/favicon.ico'));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(function(req,res,next) {
-    req.db = db;
-    next();
-});
-
-app.use('/', routes);
-
-/// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-/// error handlers
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: err,
-        title: 'error'
+    app.use(function(req,res,next) {
+        req.db = db;
+        next();
     });
-});
 
-module.exports = app;
+    app.use('/', routes);
+
+    /// catch 404 and forward to error handler
+    app.use(function(req, res, next) {
+        var err = new Error('Not Found');
+        err.status = 404;
+        next(err);
+    });
+
+    /// error handlers
+
+    // production error handler
+    // no stacktraces leaked to user
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err,
+            title: 'error'
+        });
+    });
+
+    cb(null, app)
+}
+
+function init(cb) {
+    var MongoClient = require('mongodb').MongoClient
+    var connectionString = 'mongodb://' + process.env.MONGO_USERNAME + ':' + process.env.MONGO_PASSWORD + '@ds035290.mongolab.com:35290/tomchambers';
+    MongoClient.connect(connectionString, function(err, db) {
+        if (err) return cb(err);
+        console.log("Connected correctly to server");
+        start(db, cb);
+    });
+}
+
+module.exports = init;
