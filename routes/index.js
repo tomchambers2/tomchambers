@@ -18,7 +18,7 @@ router.get('/portfolio', function(req, res, next) {
 router.get('/projects', function(req, res, next) {
   var db = req.db;
   var collection = db.collection('projectSites');
-  collection.find({},{ sort: { order: 1 }}).toArray(function(e,docs){
+  collection.find({},{ sort: { date: -1 }}).toArray(function(e,docs){
     if (e) return next(e);
   	res.render('projects', { title: 'Tom Chambers\'s projects', page: 'projects', sites: docs });
   })

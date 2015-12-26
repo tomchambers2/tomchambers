@@ -237,6 +237,7 @@ div.portfolio .box {
 }
 
 div.portfolio .box {
+	width: 280px;
 	background: #fff;
 	color: #000;
 }
