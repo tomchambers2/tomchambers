@@ -1,0 +1,68 @@
+.project {
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+.project .back {
+	padding-top: 12px;
+    display: block;
+    background-image: none;
+    cursor: pointer;
+}
+
+.project .title {
+    font-size: 80px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.project .upper, .project .lower {
+	margin-bottom: 70px;
+}
+
+.project .oneliner {
+	margin: 0;
+	font-size: 56px;
+	text-align: justify;
+}
+
+.project .upper, .project .lower {
+	display: flex;
+}
+
+.project .upper .left {
+	flex-basis: 0;
+	flex-grow: 1;
+	margin-right: 50px;
+}
+
+.project .upper .right {
+	flex-basis: 0;
+	flex-grow: 1;
+}
+
+.project .upper iframe {
+	width: 100%;
+}
+
+.project .lower .left {
+	flex-basis: 0;
+	flex-grow: 1.35;
+	margin-right: 70px;
+	text-align: justify; 
+}
+
+.project .lower .right {
+	flex-basis: 0;
+	flex-grow: 1;
+}
+
+.project .lower h2:first-of-type {
+	margin-top: 0;
+}
+
+.project img {
+	width: 100%;
+}
+

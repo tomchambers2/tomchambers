@@ -16,7 +16,8 @@ block content
 		div.portfolio-container
 			each project in projects
 				div.box(class="#{project.type} #{project.name}")
-					img(src="#{project._.image.fit(200,200)}")
+					a(href="/projects/#{project.slug}")
+						img(src="#{project._.image.thumbnail(300,300)}")
 					div.extended-desc
 						|<b>#{project.name}</b>
 						p!= project.extended_desc
@@ -24,8 +25,8 @@ block content
 						if project.github
 							a(href="#{project.github}" target="_blank")
 								button(class='github') <i class="fa fa-github"></i> Github repo
-							a(href="/projects/#{project.slug}" target="_blank")
-								button(class='site-link second') <i class="fa fa-link"></i> Website
+							a(href="/projects/#{project.slug}")
+								button(class='site-link second') <i class="fa fa-link"></i> View project
 						else
-							a(href="/projects/#{project.slug}" target="_blank")
-								button(class='site-link solo') <i class="fa fa-link"></i> Website
+							a(href="/projects/#{project.slug}")
+								button(class='site-link solo') <i class="fa fa-link"></i> View project

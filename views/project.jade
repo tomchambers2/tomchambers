@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+	div.project
+		a(href="/projects" class="back") &#8592; Back to the projects
+		h2.title #{project.name}
+
+		if project.video_embed
+			div.upper
+				h2.oneliner #{project.oneliner}
+			div.upper.video
+				!{project.video_embed.html}
+		else
+			div.upper
+				div.left
+					img(src="#{project._.image.limit(600,600)}")
+
+				div.right
+					h2.oneliner #{project.oneliner}
+
+		div.lower
+			div.left
+				!{project.description}
+
+			div.right
+				each image, i in project.images
+					a(href="#{image.src()}" target="_blank")
+						img(src="#{image.limit(600,600)}")

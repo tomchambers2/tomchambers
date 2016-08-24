@@ -2,6 +2,8 @@ var keystone = require('keystone'),
     middleware = require('./middleware'),
     importRoutes = keystone.importer(__dirname);
 
+var markdown = require('marked');    
+
 var Project = keystone.list('Project');
 var Type = keystone.list('Type');
 
@@ -21,6 +23,7 @@ keystone.set('500', function(err, req, res, next) {
         message = err.message;
         err = err.stack;
     }
+    console.error(err)
     res.err(err, title, message);
 });
  
@@ -68,13 +71,26 @@ exports = module.exports = function(app) {
         view.render('projects');
     });
 
-    app.get('/portfolio', function(req, res, next) {
-      var db = req.db;
-      var collection = db.collection('portfolioSites');
-      collection.find({},{ sort: { order: 1 }}).toArray(function(e,docs){
-        if (e) return next(e);
-        res.render('portfolio', { title: 'Tom Chambers web portfolio', page: 'portfolio', sites: docs });
-      })
+    app.get('/projects/:slug([0-9a-zA-Z]*)', function(req, res, next) {
+        var view = new keystone.View(req, res);
+
+        view.on('init', function(next) {
+            Project.model.findOne({ slug: req.params.slug })
+            .exec().then(function(result) {
+                if (result) {
+                    res.locals.project = result;
+                    res.locals.project.description = markdown(res.locals.project.description);
+                } else {
+                    res.notfound();
+                }
+                next();
+            }, function(err) {
+                next(err);
+            });
+            
+        });
+
+        view.render('project');
     });
 
     app.get('/contact', function(req, res) {
