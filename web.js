@@ -11,6 +11,7 @@ keystone.init({
   'session': true,
   'auth': true,
   'user model': 'User',
+  'cloudinary config': process.env.CLOUDINARY_URL,
   'cookie secret': '123456'
 });
 require('./models');

@@ -3,6 +3,7 @@ var keystone = require('keystone'),
     importRoutes = keystone.importer(__dirname);
 
 var Project = keystone.list('Project');
+var Type = keystone.list('Type');
 
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
@@ -46,7 +47,15 @@ exports = module.exports = function(app) {
             .sort('date')
             .exec().then(function(result) {
                 res.locals.projects = result;
-                next();
+
+                Type.model.find({})
+                .exec().then(function(result) {
+                    res.locals.types = result;
+                    next();
+                },function(err) {
+                    next(err);
+                });
+
             }, function(err) {
                 next(err);
             });

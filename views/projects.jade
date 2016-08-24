@@ -9,25 +9,23 @@ block content
 			|Filter by
 		div.portfolio-filters
 			button(data-filter="*" class="filter-select selected") Everything
-			button(data-filter=".situations" class="filter-select") Situations
-			button(data-filter=".experiences" class="filter-select") Experiences
-			button(data-filter=".stories" class="filter-select") Stories
-			button(data-filter=".tech-creations" class="filter-select") Tech Creations
+			each type in types
+				button(data-filter=".#{type._id}" class="filter-select selected") #{type.name}				
 		h3.mobile-only
 			|Tap to expand boxes
 		div.portfolio-container
-			each site in sites
-				div.box(class="#{site.type} #{site.name}")
-					img(src="img/#{site.image}")
+			each project in projects
+				div.box(class="#{project.type} #{project.name}")
+					img(src="#{project._.image.fit(200,200)}")
 					div.extended-desc
-						|<b>#{site.name}</b>
-						p!= site.extended_desc
+						|<b>#{project.name}</b>
+						p!= project.extended_desc
 					div.buttons
-						if site.github
-							a(href="#{site.github}" target="_blank")
+						if project.github
+							a(href="#{project.github}" target="_blank")
 								button(class='github') <i class="fa fa-github"></i> Github repo
-							a(href="#{site.link}" target="_blank")
+							a(href="/projects/#{project.slug}" target="_blank")
 								button(class='site-link second') <i class="fa fa-link"></i> Website
 						else
-							a(href="#{site.link}" target="_blank")
+							a(href="/projects/#{project.slug}" target="_blank")
 								button(class='site-link solo') <i class="fa fa-link"></i> Website
