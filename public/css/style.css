@@ -16,7 +16,13 @@ a {
 	text-decoration: none;
     background-image: linear-gradient(transparent 1.04em,#000 7px,#000 1.10em,transparent 1em);	
 	position: relative;
+	cursor: pointer;
 }
+
+a.plain {
+	background-image: none;
+}
+
 .page-one {
 	max-height: 100%;
 }

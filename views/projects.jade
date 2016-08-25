@@ -1,5 +1,14 @@
 extends layout
 
+mixin link(link, image)
+	a(href="#{link}" class="plain")
+		!= image
+
+mixin buttonlink(link, position)
+	a(href="#{link}")
+		button(class='site-link #{position}') <i class="fa fa-link"></i> View project
+
+
 block content
 	div.main
 		include header
@@ -15,17 +24,23 @@ block content
 		div.portfolio-container
 			each project in projects
 				div.box(class="#{project.type} #{project.name}")
-					a(href="/projects/#{project.slug}")
-						img(src="#{project._.image.thumbnail(300,300)}")
+					if project.link
+						+link(project.link, '<img src="' + project._.image.thumbnail(355,200) + '" />')
+					else
+						+link("/projects/" + project.slug, '<img src="' + project._.image.thumbnail(355,200) + '" />')
 					div.extended-desc
 						|<b>#{project.name}</b>
-						p!= project.extended_desc
+						p!= project.oneliner
 					div.buttons
 						if project.github
 							a(href="#{project.github}" target="_blank")
 								button(class='github') <i class="fa fa-github"></i> Github repo
-							a(href="/projects/#{project.slug}")
-								button(class='site-link second') <i class="fa fa-link"></i> View project
+							if project.link
+								+buttonlink(project.link, second)
+							else
+								+buttonlink("/projects/" + project.slug, second)
 						else
-							a(href="/projects/#{project.slug}")
-								button(class='site-link solo') <i class="fa fa-link"></i> View project
+							if project.link
+								+buttonlink(project.link, "solo")
+							else
+								+buttonlink("/projects/" + project.slug, "solo")

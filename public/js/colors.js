@@ -4,7 +4,11 @@ $(window).on('load', function() {
 
 		var width = $(this).find('img')[0].width;
 		console.log('width',width)
-		$(this).width(width);
+		if (width < 1) {
+			$(this).width(355);
+		} else {
+			$(this).width(width);
+		}
 	})
 
 	var $container = $('.portfolio-container');
@@ -64,37 +68,4 @@ $(document).ready(function() {
 		}
 	});
 
-
-
-	// function randomColor(element) {
-	// 	var up = [true,true,true];
-	// 	setInterval(function() {
-	// 		var color = '#'+Math.floor(Math.random()*16777215).toString(16);
-	// 		var current = element.css('border-bottom-color');
-	// 		var colors = current.match(/[0-9]{1,3}/g);
-	// 		function changeColor(index) {
-	// 			if (colors[index] === '255') {
-	// 				up[index] = false;
-	// 			} else if (colors[index] === '0') {
-	// 				up[index] = true;
-	// 			}
-	// 			if (up[index] === true) {
-	// 				return parseInt(colors[index])+1;
-	// 			} else if (up[index] === false) {
-	// 				return parseInt(colors[index])-1;
-	// 			}
-	// 		}
-	// 		r = changeColor(0);
-	// 		g = changeColor(1);
-	// 		b = changeColor(2);
-	// 		var output = 'rgb('+r+','+g+','+b+')';
-	// 		element.css('border-bottom-color', output);
-	// 	},200);		
-	// }
-
-	/*randomColor($('.triangle.one'));
-	randomColor($('.triangle.two'));
-	randomColor($('.triangle.three'));
-	randomColor($('.triangle.four'));
-	randomColor($('.triangle.five')); */
 })
