@@ -78,6 +78,7 @@ exports = module.exports = function(app) {
             Project.model.findOne({ slug: req.params.slug })
             .exec().then(function(result) {
                 if (result) {
+                    res.locals.title = result.name;
                     res.locals.project = result;
                     res.locals.project.description = markdown(res.locals.project.description);
                 } else {
