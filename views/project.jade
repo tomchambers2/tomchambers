@@ -6,7 +6,7 @@ block content
 		a(href="/projects" class="back") &#8592; Back to the projects
 		h2.title #{project.name}
 
-		if project.video_embed
+		if project.video_embed.html
 			div.upper
 				h2.oneliner #{project.oneliner}
 			div.upper.video
